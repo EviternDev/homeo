@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, ShoppingBag } from "lucide-react";
@@ -23,13 +23,10 @@ const navItems = [
   { href: "/login", label: "Account" },
 ];
 
+const subscribe = () => () => {};
+
 function useMounted() {
-  const [mounted, setMounted] = useState(false);
-  // Using microtask to avoid synchronous setState in effect
-  if (typeof window !== "undefined" && !mounted) {
-    queueMicrotask(() => setMounted(true));
-  }
-  return mounted;
+  return useSyncExternalStore(subscribe, () => true, () => false);
 }
 
 export function Header() {

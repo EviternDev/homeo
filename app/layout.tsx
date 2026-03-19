@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ToastProvider } from "@/components/layout/ToastProvider";
+import { ToastContainer } from "@/components/layout/ToastContainer";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -30,9 +32,12 @@ export default function RootLayout({
       className={`${manrope.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ToastProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <ToastContainer />
+        </ToastProvider>
       </body>
     </html>
   );

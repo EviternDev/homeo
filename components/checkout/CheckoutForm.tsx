@@ -1,12 +1,16 @@
 "use client";
 
-import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useCartStore } from "@/lib/store/cartStore";
+import { useOrderStore } from "@/lib/store/orderStore";
 import { cn } from "@/lib/utils";
+import { validateForm } from "@/lib/utils/validation";
+import type { ShippingAddress } from "@/types";
 
 const paymentMethods = [
   { id: "card", title: "Card", subtitle: "Visa, Mastercard, RuPay" },
@@ -25,28 +29,31 @@ const shippingFields = [
   { id: "notes", label: "Delivery notes (optional)", autoComplete: "off", type: "text" },
 ];
 
-type FormState = Record<(typeof shippingFields)[number]["id"], string>;
+type FormState = ShippingAddress & { notes: string };
 
-const initialFormState = shippingFields.reduce<FormState>((acc, field) => {
-  acc[field.id as keyof FormState] = "";
-  return acc;
-}, {} as FormState);
+const initialFormState: FormState = {
+  fullName: "",
+  email: "",
+  phone: "",
+  address: "",
+  city: "",
+  state: "",
+  postalCode: "",
+  notes: "",
+};
 
 export function CheckoutForm() {
-  const isCartEmpty = useCartStore((state) => state.items.length === 0);
+  const router = useRouter();
+  const cartItems = useCartStore((state) => state.items);
+  const clearCart = useCartStore((state) => state.clearCart);
+  const isCartEmpty = cartItems.length === 0;
+  const createOrder = useOrderStore((state) => state.createOrder);
 
   const [formValues, setFormValues] = useState<FormState>(initialFormState);
   const [paymentMethod, setPaymentMethod] = useState<string>(paymentMethods[0].id);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const submitTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (submitTimer.current) {
-        clearTimeout(submitTimer.current);
-      }
-    };
-  }, []);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+  const fieldRefs = useRef<Record<string, HTMLInputElement | null>>({});
 
   const isFormComplete = useMemo(() => {
     const requiredFields = shippingFields
@@ -58,7 +65,24 @@ export function CheckoutForm() {
   const isDisabled = isCartEmpty || !isFormComplete || !paymentMethod || isSubmitting;
 
   const handleChange = (field: keyof FormState) => (event: ChangeEvent<HTMLInputElement>) => {
-    setFormValues((prev) => ({ ...prev, [field]: event.target.value }));
+    const value = event.target.value;
+    setFormValues((prev) => ({ ...prev, [field]: value }));
+    setFieldErrors((prev) => {
+      if (!prev[field as string]) {
+        return prev;
+      }
+      const next = { ...prev };
+      delete next[field as string];
+      return next;
+    });
+  };
+
+  const scrollToField = (fieldId: string) => {
+    const element = fieldRefs.current[fieldId];
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+      element.focus({ preventScroll: true });
+    }
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -66,10 +90,49 @@ export function CheckoutForm() {
     if (isDisabled) {
       return;
     }
+
+    const errors = validateForm(formValues as unknown as Record<string, string>);
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      const firstErrorField = shippingFields.find((field) => errors[field.id]);
+      if (firstErrorField) {
+        scrollToField(firstErrorField.id);
+      }
+      return;
+    }
+
+    setFieldErrors({});
     setIsSubmitting(true);
-    submitTimer.current = setTimeout(() => {
+
+    const subtotal = cartItems.reduce(
+      (sum, item) => sum + item.product.price * item.quantity,
+      0
+    );
+    const shipping = subtotal > 0 ? 0 : 0;
+    const total = subtotal + shipping;
+
+    try {
+      const shippingAddress: ShippingAddress = {
+        ...formValues,
+        notes: formValues.notes.trim() ? formValues.notes.trim() : undefined,
+      };
+      const order = createOrder({
+        items: cartItems,
+        subtotal,
+        shipping,
+        total,
+        shippingAddress,
+        paymentMethod,
+      });
+      clearCart();
+      setFormValues(initialFormState);
+      setPaymentMethod(paymentMethods[0].id);
+      router.push(`/?orderSuccess=true&orderId=${order.id}`);
+    } catch (error) {
+      console.error("Failed to submit order", error);
+    } finally {
       setIsSubmitting(false);
-    }, 1200);
+    }
   };
 
   return (
@@ -88,7 +151,16 @@ export function CheckoutForm() {
         </header>
         <div className="grid gap-4 sm:grid-cols-2">
           {shippingFields.map((field) => (
-            <div key={field.id} className={field.id === "address" ? "sm:col-span-2" : field.id === "notes" ? "sm:col-span-2" : undefined}>
+            <div
+              key={field.id}
+              className={
+                field.id === "address"
+                  ? "sm:col-span-2"
+                  : field.id === "notes"
+                  ? "sm:col-span-2"
+                  : undefined
+              }
+            >
               <Label htmlFor={field.id} className="text-emerald-900">
                 {field.label}
               </Label>
@@ -99,8 +171,19 @@ export function CheckoutForm() {
                 autoComplete={field.autoComplete}
                 value={formValues[field.id as keyof FormState]}
                 onChange={handleChange(field.id as keyof FormState)}
-                className="mt-1 rounded-2xl border-emerald-100 bg-white/70 focus-visible:border-emerald-400 focus-visible:ring-emerald-200"
+                ref={(node) => {
+                  fieldRefs.current[field.id] = node;
+                }}
+                className={cn(
+                  "mt-1 rounded-2xl border-emerald-100 bg-white/70 focus-visible:ring-emerald-200",
+                  fieldErrors[field.id]
+                    ? "border-red-500 focus-visible:border-red-500 focus-visible:ring-red-200"
+                    : "focus-visible:border-emerald-400"
+                )}
               />
+              {fieldErrors[field.id] ? (
+                <p className="mt-1 text-xs font-medium text-red-600">{fieldErrors[field.id]}</p>
+              ) : null}
             </div>
           ))}
         </div>

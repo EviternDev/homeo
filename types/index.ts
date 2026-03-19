@@ -92,3 +92,5 @@ export interface ProductFilters {
 
 // Sort Types
 export type SortOption = 'featured' | 'price-low' | 'price-high' | 'rating' | 'newest' | 'name-asc' | 'name-desc';
+
+export * from "./order";
