@@ -1,0 +1,15 @@
+<svg width="1440" height="480" viewBox="0 0 1440 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1440" height="480" fill="url(#paint0_linear_hero)"/>
+<ellipse cx="300" cy="140" rx="180" ry="80" fill="#DDE7CF" opacity="0.25"/>
+<ellipse cx="1080" cy="120" rx="220" ry="100" fill="#F2DCC7" opacity="0.25"/>
+<path d="M0 360C140 320 280 320 420 360C560 400 700 400 840 360C980 320 1120 320 1260 360C1350 386 1440 360 1440 360V480H0V360Z" fill="#EAD9C9" opacity="0.5"/>
+<path d="M0 400C160 360 320 360 480 400C640 440 800 440 960 400C1120 360 1280 360 1440 400V480H0V400Z" fill="#C2D6B8" opacity="0.45"/>
+<path d="M260 420C340 360 460 360 540 420H260Z" fill="#789474" opacity="0.3"/>
+<path d="M940 420C1020 360 1140 360 1220 420H940Z" fill="#B47451" opacity="0.25"/>
+<defs>
+<linearGradient id="paint0_linear_hero" x1="0" y1="0" x2="1440" y2="480" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F6F2E9"/>
+<stop offset="1" stop-color="#E8D7C4"/>
+</linearGradient>
+</defs>
+</svg>

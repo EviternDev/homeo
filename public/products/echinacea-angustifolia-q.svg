@@ -1,0 +1,17 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="320" fill="#F7F1E8"/>
+<circle cx="64" cy="82" r="28" fill="#D5E1CC"/>
+<circle cx="250" cy="76" r="24" fill="#E8CDBD"/>
+<rect x="116" y="60" width="88" height="208" rx="30" fill="url(#paint0_linear_echinacea)"/>
+<rect x="126" y="94" width="70" height="92" rx="14" fill="#FEFAF3"/>
+<rect x="138" y="212" width="44" height="36" rx="12" fill="#D9E6D0"/>
+<path d="M60 236C86 214 122 214 152 242C118 258 90 260 60 236Z" fill="#B8CEB5"/>
+<path d="M248 246C222 222 194 222 172 236C200 254 226 258 248 246Z" fill="#D1A68D"/>
+<path d="M102 268C124 252 142 252 164 268C142 280 120 280 102 268Z" fill="#A5BBA3"/>
+<defs>
+<linearGradient id="paint0_linear_echinacea" x1="116" y1="60" x2="204" y2="268" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5B745B"/>
+<stop offset="1" stop-color="#8EA07F"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,17 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="320" fill="#F4EEE5"/>
+<circle cx="70" cy="72" r="26" fill="#D2E1CB"/>
+<circle cx="248" cy="78" r="22" fill="#E6C9B5"/>
+<rect x="118" y="58" width="84" height="208" rx="32" fill="url(#paint0_linear_gelsemium)"/>
+<rect x="128" y="96" width="64" height="92" rx="14" fill="#FDF8F1"/>
+<rect x="140" y="214" width="44" height="36" rx="12" fill="#D7E5CF"/>
+<path d="M58 234C88 212 120 214 150 240C118 256 88 258 58 234Z" fill="#B5C9AF"/>
+<path d="M246 246C220 220 194 220 172 236C198 254 224 260 246 246Z" fill="#D3A07F"/>
+<path d="M104 266C124 252 140 252 162 266C140 278 120 278 104 266Z" fill="#A0B6A1"/>
+<defs>
+<linearGradient id="paint0_linear_gelsemium" x1="118" y1="58" x2="202" y2="266" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5F7B63"/>
+<stop offset="1" stop-color="#8CA081"/>
+</linearGradient>
+</defs>
+</svg>

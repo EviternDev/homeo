@@ -1,0 +1,17 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="320" fill="#F6F2EA"/>
+<circle cx="64" cy="74" r="26" fill="#D7E3CC"/>
+<circle cx="248" cy="70" r="24" fill="#E9CEBC"/>
+<rect x="110" y="58" width="100" height="204" rx="34" fill="url(#paint0_linear_aconite)"/>
+<rect x="121" y="90" width="82" height="90" rx="14" fill="#FEFAF2"/>
+<rect x="134" y="210" width="52" height="34" rx="12" fill="#D8E4CF"/>
+<path d="M54 236C84 214 118 214 150 244C118 258 88 260 58 248C56 246 54 242 54 236Z" fill="#BBD0B7"/>
+<path d="M248 246C220 220 192 220 170 236C196 256 224 262 248 246Z" fill="#D7B29C"/>
+<path d="M100 268C122 252 140 252 164 268C142 280 122 280 100 268Z" fill="#A4BAA3"/>
+<defs>
+<linearGradient id="paint0_linear_aconite" x1="110" y1="58" x2="210" y2="262" gradientUnits="userSpaceOnUse">
+<stop stop-color="#7B8D6D"/>
+<stop offset="1" stop-color="#A1B78F"/>
+</linearGradient>
+</defs>
+</svg>

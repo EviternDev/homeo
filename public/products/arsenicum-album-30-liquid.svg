@@ -1,0 +1,17 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="320" fill="#F6F1E8"/>
+<circle cx="64" cy="78" r="26" fill="#D3E1CB"/>
+<circle cx="252" cy="80" r="24" fill="#E7CBB8"/>
+<rect x="118" y="54" width="84" height="216" rx="30" fill="url(#paint0_linear_arsenicum)"/>
+<rect x="128" y="96" width="64" height="90" rx="14" fill="#FEF9F2"/>
+<rect x="138" y="214" width="44" height="38" rx="12" fill="#D5E4CE"/>
+<path d="M56 238C86 216 118 216 150 244C120 258 90 260 60 248C58 246 56 242 56 238Z" fill="#B7CEB5"/>
+<path d="M248 246C220 222 194 222 170 238C198 256 224 262 248 246Z" fill="#CEA385"/>
+<path d="M100 270C122 254 142 254 164 270C142 282 122 282 100 270Z" fill="#A4B9A4"/>
+<defs>
+<linearGradient id="paint0_linear_arsenicum" x1="118" y1="54" x2="202" y2="270" gradientUnits="userSpaceOnUse">
+<stop stop-color="#54664B"/>
+<stop offset="1" stop-color="#7E8C61"/>
+</linearGradient>
+</defs>
+</svg>

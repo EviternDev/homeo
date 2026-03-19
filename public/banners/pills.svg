@@ -1,0 +1,21 @@
+<svg width="640" height="220" viewBox="0 0 640 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="640" height="220" rx="28" fill="url(#paint0_linear_pills)"/>
+<g opacity="0.18">
+<circle cx="520" cy="70" r="48" fill="#F4DDC7"/>
+<circle cx="140" cy="60" r="42" fill="#DDE7CF"/>
+</g>
+<rect x="210" y="80" width="80" height="34" rx="17" fill="#FDF6EC" stroke="#8EA07F" stroke-width="4"/>
+<rect x="210" y="52" width="80" height="64" rx="20" fill="#F2D8C3"/>
+<rect x="320" y="54" width="70" height="112" rx="28" fill="#F8E7D7" stroke="#5C745F" stroke-width="4"/>
+<rect x="330" y="78" width="50" height="44" rx="14" fill="#FDF7EE"/>
+<rect x="440" y="80" width="84" height="34" rx="17" fill="#FAEFE3" stroke="#C8875E" stroke-width="4"/>
+<rect x="440" y="52" width="84" height="64" rx="20" fill="#E6CBB9"/>
+<path d="M120 188C160 152 214 150 252 188H120Z" fill="#9FB791" opacity="0.4"/>
+<path d="M360 188C396 152 452 152 492 188H360Z" fill="#C07D55" opacity="0.3"/>
+<defs>
+<linearGradient id="paint0_linear_pills" x1="0" y1="0" x2="640" y2="220" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F6F2E8"/>
+<stop offset="1" stop-color="#E8D7C6"/>
+</linearGradient>
+</defs>
+</svg>

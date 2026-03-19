@@ -1,0 +1,17 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="320" fill="#F7F2EA"/>
+<circle cx="64" cy="86" r="28" fill="#D4E2CB"/>
+<circle cx="252" cy="72" r="26" fill="#E9CEBC"/>
+<rect x="114" y="56" width="92" height="212" rx="32" fill="url(#paint0_linear_livercare)"/>
+<rect x="126" y="96" width="70" height="96" rx="16" fill="#FEFAF3"/>
+<rect x="136" y="216" width="58" height="34" rx="12" fill="#D8E5CF"/>
+<path d="M56 236C86 214 124 214 154 244C122 258 90 260 60 236Z" fill="#BACDB5"/>
+<path d="M248 248C220 222 192 222 170 238C198 258 224 262 248 248Z" fill="#D3A98C"/>
+<path d="M104 268C126 252 146 252 166 268C142 280 122 280 104 268Z" fill="#A7BCA5"/>
+<defs>
+<linearGradient id="paint0_linear_livercare" x1="114" y1="56" x2="206" y2="268" gradientUnits="userSpaceOnUse">
+<stop stop-color="#557055"/>
+<stop offset="1" stop-color="#7F966F"/>
+</linearGradient>
+</defs>
+</svg>

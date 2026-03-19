@@ -54,7 +54,7 @@ Status: Completed (baseline)
 
 ## Phase 8 - Deferred Enhancements (Implement Later)
 - Add mobile navigation drawer in header (completed)
-- Add checkout page skeleton (UI flow only)
-- Add richer product imagery and category banner assets
+- Add checkout page skeleton (UI flow only) (completed)
+- Add richer product imagery and category banner assets (completed)
 
-Status: In progress
+Status: Completed

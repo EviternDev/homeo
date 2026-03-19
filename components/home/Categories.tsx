@@ -9,12 +9,14 @@ const cards = [
     description: "Mother tinctures, dilutions, and combination drops in sealed bottles.",
     href: "/products?category=bottled",
     icon: "B",
+    banner: "/banners/bottled-medicines.svg",
   },
   {
     title: "Pill Medicines",
     description: "Globules, tablets, and bio-combinations with popular potencies.",
     href: "/products?category=pills",
     icon: "P",
+    banner: "/banners/pills.svg",
   },
 ];
 
@@ -33,8 +35,14 @@ export function Categories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="glass rounded-3xl p-6"
+              className="glass relative overflow-hidden rounded-3xl border border-border/70 bg-white/80 p-6 shadow-sm"
             >
+              <div
+                className="absolute inset-0 -z-10 bg-cover bg-center opacity-80"
+                style={{ backgroundImage: `url(${card.banner})` }}
+                aria-hidden="true"
+              />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white/90 via-white/40 to-transparent" aria-hidden="true" />
               <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
                 {card.icon}
               </div>

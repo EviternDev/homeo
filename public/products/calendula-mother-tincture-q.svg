@@ -1,0 +1,17 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="320" fill="#F4EEE4"/>
+<circle cx="70" cy="68" r="26" fill="#D1E0C8"/>
+<circle cx="252" cy="70" r="22" fill="#EACBB9"/>
+<rect x="118" y="52" width="84" height="216" rx="28" fill="url(#paint0_linear_calendula)"/>
+<rect x="126" y="94" width="68" height="88" rx="16" fill="#FCF7EF"/>
+<rect x="138" y="214" width="44" height="34" rx="12" fill="#D5E4CD"/>
+<path d="M58 234C88 210 126 214 152 242C122 258 92 262 58 234Z" fill="#B6CBAF"/>
+<path d="M250 248C226 220 198 220 176 238C202 258 226 262 250 248Z" fill="#CF9C7D"/>
+<path d="M106 266C126 252 146 252 168 266C146 278 124 278 106 266Z" fill="#A0B6A0"/>
+<defs>
+<linearGradient id="paint0_linear_calendula" x1="118" y1="52" x2="202" y2="268" gradientUnits="userSpaceOnUse">
+<stop stop-color="#516547"/>
+<stop offset="1" stop-color="#7C8F62"/>
+</linearGradient>
+</defs>
+</svg>

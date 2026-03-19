@@ -7,6 +7,10 @@ import { Button } from "@/components/ui/button";
 export function Hero() {
   return (
     <section className="relative overflow-hidden py-14 sm:py-20">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[url('/banners/hero-banner.svg')] bg-cover bg-center" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/60 to-transparent" aria-hidden="true" />
+      </div>
       <div className="container-shell grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

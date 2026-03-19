@@ -1,0 +1,17 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="320" fill="#F6F0E6"/>
+<circle cx="70" cy="82" r="28" fill="#D0DFC7"/>
+<circle cx="250" cy="70" r="22" fill="#E8CCB6"/>
+<rect x="112" y="54" width="96" height="210" rx="32" fill="url(#paint0_linear_rhus)"/>
+<rect x="122" y="86" width="76" height="88" rx="12" fill="#FCF7EF"/>
+<rect x="136" y="210" width="52" height="34" rx="12" fill="#D6E2CC"/>
+<path d="M46 236C82 212 120 214 150 242C120 258 92 260 60 248C54 246 50 242 46 236Z" fill="#B8CEB0"/>
+<path d="M252 246C230 220 198 218 170 232C198 254 224 260 252 246Z" fill="#D6B199"/>
+<path d="M108 268C130 252 146 252 168 266C146 278 126 278 108 268Z" fill="#A2B79F"/>
+<defs>
+<linearGradient id="paint0_linear_rhus" x1="112" y1="54" x2="208" y2="264" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5E7C69"/>
+<stop offset="1" stop-color="#8BA28A"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,17 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="320" fill="#F7F3EA"/>
+<circle cx="72" cy="64" r="26" fill="#D9E6C7"/>
+<circle cx="260" cy="56" r="18" fill="#EFD8C4"/>
+<rect x="110" y="60" width="100" height="200" rx="32" fill="url(#paint0_linear_arnica)"/>
+<rect x="120" y="88" width="80" height="96" rx="14" fill="#FEFBF5"/>
+<rect x="136" y="212" width="48" height="32" rx="10" fill="#D7E5CF"/>
+<path d="M52 230C78 210 112 210 132 236C104 248 82 250 52 230Z" fill="#C9DDC0"/>
+<path d="M248 250C226 220 198 214 172 230C198 252 222 260 248 250Z" fill="#E4C3AD"/>
+<path d="M96 252C116 238 140 238 160 254C138 266 118 266 96 252Z" fill="#B8CCB3"/>
+<defs>
+<linearGradient id="paint0_linear_arnica" x1="110" y1="60" x2="210" y2="260" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5D7B68"/>
+<stop offset="1" stop-color="#8BA98C"/>
+</linearGradient>
+</defs>
+</svg>

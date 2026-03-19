@@ -1,0 +1,17 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="320" fill="#F3EEE5"/>
+<circle cx="72" cy="74" r="26" fill="#D7E4CD"/>
+<circle cx="250" cy="70" r="22" fill="#E7CBBB"/>
+<rect x="118" y="56" width="84" height="212" rx="30" fill="url(#paint0_linear_berberis)"/>
+<rect x="126" y="94" width="70" height="94" rx="14" fill="#FDF8F1"/>
+<rect x="138" y="214" width="46" height="36" rx="12" fill="#D4E3CC"/>
+<path d="M58 236C86 214 118 216 148 244C118 258 88 260 58 236Z" fill="#B9CFB7"/>
+<path d="M248 250C224 222 194 220 172 238C198 256 224 262 248 250Z" fill="#D0A78C"/>
+<path d="M106 270C126 254 144 254 166 270C144 282 124 282 106 270Z" fill="#A2B9A2"/>
+<defs>
+<linearGradient id="paint0_linear_berberis" x1="118" y1="56" x2="202" y2="268" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6B5B4B"/>
+<stop offset="1" stop-color="#9A7C63"/>
+</linearGradient>
+</defs>
+</svg>
