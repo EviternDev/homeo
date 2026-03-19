@@ -23,8 +23,18 @@ const navItems = [
   { href: "/login", label: "Account" },
 ];
 
+function useMounted() {
+  const [mounted, setMounted] = useState(false);
+  // Using microtask to avoid synchronous setState in effect
+  if (typeof window !== "undefined" && !mounted) {
+    queueMicrotask(() => setMounted(true));
+  }
+  return mounted;
+}
+
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const mounted = useMounted();
   const itemCount = useCartStore((state) => state.getItemCount());
 
   return (
@@ -88,7 +98,7 @@ export function Header() {
             aria-label="Open cart"
           >
             <ShoppingBag className="h-4 w-4" />
-            {itemCount > 0 ? (
+            {mounted && itemCount > 0 ? (
               <span className="absolute -right-1.5 -top-1.5 rounded-full bg-primary px-1.5 py-0.5 text-[10px] font-bold text-primary-foreground">
                 {itemCount}
               </span>
