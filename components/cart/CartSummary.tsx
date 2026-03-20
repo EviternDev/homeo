@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/lib/store/cartStore";
 import { useCurrencyStore } from "@/lib/store/currencyStore";
@@ -31,9 +32,17 @@ export function CartSummary() {
         </div>
       </dl>
 
-      <Button className="mt-6 w-full rounded-full" size="lg" disabled={isEmpty}>
-        Proceed to checkout
-      </Button>
+      {isEmpty ? (
+        <Button className="mt-6 w-full rounded-full" size="lg" disabled>
+          Proceed to checkout
+        </Button>
+      ) : (
+        <Link href="/checkout" className="block">
+          <Button className="mt-6 w-full rounded-full" size="lg">
+            Proceed to checkout
+          </Button>
+        </Link>
+      )}
       <p className="mt-3 text-center text-xs text-muted-foreground">
         Secure checkout powered by Homeo.
       </p>
